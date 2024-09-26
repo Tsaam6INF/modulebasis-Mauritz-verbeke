@@ -1,8 +1,10 @@
-login("kleintjes.karel", "test", cb);
+const index = require("./admin");
+
+index.login("kleintjes.karel", "test");
 // resultaat: fout bij het aanmelden
 
-login("kleintjes.karel", "karel", cb);
+index.login("kleintjes.karel", "karel");
 // resultaat: kleintjes.karel: lezen - schrijven;
 
-login("dotjes.els", "els", cb);
+index.login("dotjes.els", "els");
 // resultaat: dotjes.els: lezen;
