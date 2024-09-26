@@ -1,22 +1,22 @@
 // hier link je zogezegd je dataBank (nu en javascript met data in).
 const data = require("./data");
 
-// dit is de functie login dat je zal zien in je index voor in te logen hier komen alle andere functies samen
+// Dit is de functie login dat je zal zien in je index voor in te logen hier komen alle andere functies samen
 function login(username, wachtwoord, cb) {
-  // hier checkt die als je de functie wachtWoordControle een true terug stuurt
-  // als dit niet gebeurt matcht het wachtwoord niet met de user.
+  // Hier checkt die als je de functie wachtWoordControle een true terugstuurt
+  // Als dit niet gebeurt matcht het wachtwoord niet met de user.
   if (wachtWoordControle(username, wachtwoord) == true) {
-    id = userIdOphalen(username);
-    rightId = userRightIdOphalen(id);
-    right = userRightOphalen(rightId);
-    string = `resultaat: ${username}: ${right}`;
-    return console.log(string);
+    const id = userIdOphalen(username);
+    const rightId = userRightIdOphalen(id);
+    const right = userRightOphalen(rightId);
+    const string = `resultaat: ${username}: ${right}`;
+    cb(null, string);
   } else {
-    return console.log(`resultaat: fout bij het aanmelden`);
+    cb(`resultaat: fout bij het aanmelden`);
   }
 }
 
-// in deze functie controleert als het wachtwoord klopt bij de gegeven username
+// In deze functie controleert als het wachtwoord klopt bij de gegeven username
 function wachtWoordControle(username, wachtwoord) {
   for (let i = 0; i < data.users.length; i++) {
     if (
@@ -26,6 +26,7 @@ function wachtWoordControle(username, wachtwoord) {
       return true;
     }
   }
+  return false;
 }
 
 // hier haalt hij het recht op van de persoon in een string
