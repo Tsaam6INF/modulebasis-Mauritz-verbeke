@@ -9,6 +9,11 @@ const users = [
     username: "dotjes.els",
     wachtwoord: "els",
   },
+  {
+    id: 3,
+    username: "jan.deman",
+    wachtwoord: "deman",
+  },
 ];
 
 const rights = [
@@ -30,6 +35,10 @@ const userRights = [
   {
     userid: 2,
     rightid: 1,
+  },
+  {
+    userid: 3,
+    rightid: 2,
   },
 ];
 
